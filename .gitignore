@@ -1,0 +1,6 @@
+.vscode/
+.idea/
+Clinic.sublime-workspace
+*.pyc
+**/__pycache__/*
+node_modules/*
