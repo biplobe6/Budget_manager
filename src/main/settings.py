@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@__8aow1mx5&y_tfl=e^wh&6n2(acq1^)e-$a#6srs*rlb+7(7'
+SECRET_KEY = 'bct4os!_^3frg4w0n6kb#l(4_!jlu=^&z6h4f%1u6f^0u@-9qk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+LOCAL_PRODUCTION = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [] if not LOCAL_PRODUCTION else ["*"]
 
 
 # Application definition
@@ -36,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,9 @@ ROOT_URLCONF = 'main.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, "templates")
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,3 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "staticfiles")
+]
