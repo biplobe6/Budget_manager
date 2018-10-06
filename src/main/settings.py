@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [] if not LOCAL_PRODUCTION else ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
