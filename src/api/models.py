@@ -10,7 +10,7 @@ class IncomeType(models.Model):
 
 class Income(models.Model):
     type = models.ForeignKey(IncomeType)
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True, blank=True)
     amount = models.FloatField()
 
     def __str__(self):
