@@ -10,4 +10,21 @@ GET {{base}}/{{api}}/hello
 
 ###
 GET {{base}}/{{api}}/income/get
-    ?m=10
+
+###
+GET {{base}}/{{api}}/income/get
+    ?m=9
+    &y=2018
+
+###
+GET {{base}}/{{api}}/income/add
+
+###
+GET {{base}}/{{api}}/income/add
+    ?amount=1500
+    &t=1
+
+###
+GET {{base}}/{{api}}/income/add
+    ?amount=1500
+    &t=0
