@@ -1,4 +1,4 @@
-@base = http://localhost:8081
+@base = http://127.0.0.1:8081
 
 @api = api/v1
 ###
@@ -23,6 +23,15 @@ GET {{base}}/{{api}}/income/add
 GET {{base}}/{{api}}/income/add
     ?amount=1500
     &t=1
+
+###
+GET {{base}}/{{api}}/income/add
+    ?amount=2000
+    &t=1
+    &y=2018
+    &m=10
+    &d=7
+
 
 ###
 GET {{base}}/{{api}}/income/add

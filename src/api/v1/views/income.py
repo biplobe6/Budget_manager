@@ -27,9 +27,9 @@ def add(request):
     today = datetime.now()
     amount = request.GET.get("amount", 0)
     income_type_id = request.GET.get("t", "")
-    year = request.GET.get("y", today.year)
-    month = request.GET.get("m", today.month)
-    day = request.GET.get("d", today.day)
+    year = int(request.GET.get("y", today.year))
+    month = int(request.GET.get("m", today.month))
+    day = int(request.GET.get("d", today.day))
 
     def result():
         return JsonResponse({"amount": calculate_total_income(year, month)})
