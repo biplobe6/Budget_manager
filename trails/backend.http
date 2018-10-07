@@ -7,3 +7,7 @@ GET {{base}}
 
 ###
 GET {{base}}/{{api}}/hello
+
+###
+GET {{base}}/{{api}}/income/get
+    ?m=10
