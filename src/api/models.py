@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 
 class IncomeType(models.Model):
@@ -10,7 +11,7 @@ class IncomeType(models.Model):
 
 class Income(models.Model):
     type = models.ForeignKey(IncomeType, on_delete=models.CASCADE)
-    date = models.DateField(auto_now_add=True, blank=True)
+    date = models.DateField(default=date.today)
     amount = models.FloatField()
 
     def __str__(self):
