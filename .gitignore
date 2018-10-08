@@ -4,8 +4,6 @@ Clinic.sublime-workspace
 *.pyc
 **/__pycache__/*
 node_modules/*
-trails/*
-!trails/backend.http
 env/*
 !env/pip_lock.bat
 !env/install.bat
