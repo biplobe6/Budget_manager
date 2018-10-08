@@ -17,6 +17,10 @@ GET {{url}}?m=9
 GET {{url}}?d=7
 
 ###
+# specific date lookup // 2018-09-22
+GET {{url}}?y=2018&m=9&d=22
+
+###
 POST {{url}}/add
 Content-Type: application/json
 
