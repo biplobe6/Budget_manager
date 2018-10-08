@@ -1,4 +1,4 @@
-from rest_framework import generics, serializers, viewsets
+from rest_framework import generics, serializers
 from api import models
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
