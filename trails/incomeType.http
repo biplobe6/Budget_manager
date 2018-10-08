@@ -1,0 +1,30 @@
+@host = http://127.0.0.1:8081
+@api = api/v1
+
+
+
+###
+GET {{host}}/{{api}}/income_type
+
+
+###
+POST {{host}}/{{api}}/income_type/add
+Content-Type: application/json
+
+{
+    "type": "account2"
+}
+
+###
+GET {{host}}/{{api}}/income_type/1
+
+###
+DELETE {{host}}/{{api}}/income_type/9
+
+###
+PUT {{host}}/{{api}}/income_type/9
+Content-Type: application/json
+
+{
+    "type": "ac33"
+}
