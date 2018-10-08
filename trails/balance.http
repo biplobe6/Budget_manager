@@ -1,0 +1,6 @@
+@url = http://127.0.0.1:8074/api/v1/balance
+
+GET {{url}}
+
+###
+GET {{url}}/calc

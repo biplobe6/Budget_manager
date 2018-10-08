@@ -1,4 +1,5 @@
 from django.db import models
+from django.http import JsonResponse
 from datetime import date
 
 
@@ -32,3 +33,47 @@ class Expense(models.Model):
 
     def __str__(self):
         return str("type: {}, amount: {}, date: {}".format(self.type, self.amount, self.date))
+
+
+class BalanceDB(models.Model):
+    amount = models.FloatField(default=0)
+
+    def __str__(self):
+        return str("Balance: {}".format(self.amount))
+
+
+class Balance:
+    def __init__(self):
+        self.model = BalanceDB
+        self.expense_model = Expense
+        self.income_model = Income
+        self.object = self.get_object()
+
+    def get_object(self):
+        try:
+            return self.model.objects.get(id=1)
+        except models.ObjectDoesNotExist:
+            balance_obj = self.model()
+            balance_obj.save()
+            return balance_obj
+
+    def calculate_amount(self):
+        income = self.income_model.objects.aggregate(income=models.Sum("amount"))["income"]
+        expense = self.expense_model.objects.aggregate(expense=models.Sum("amount"))["expense"]
+        self.object.amount = income - expense
+        self.object.save()
+
+    def get(self):
+        return self.object.amount
+
+    def set(self, value):
+        self.object.amount += value
+        self.object.save()
+        return self.object.amount
+
+    @property
+    def response(self):
+        return JsonResponse({
+            "amount": self.get()
+        })
+

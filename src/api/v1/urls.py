@@ -4,6 +4,8 @@ from . import views
 app_name = "v1"
 
 urlpatterns = [
+    url(r'^balance$', views.balance.get, name="balance"),
+    url(r'^balance/calc$', views.balance.calculate, name="balance_calc"),
     url("^income$", views.income.get, name="list_income"),
     url("^income/add$", views.income.Add.as_view(), name="add_income"),
     url("^income/(?P<id>\d+)$", views.income.Details.as_view(), name="edit_income"),
