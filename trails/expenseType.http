@@ -1,0 +1,28 @@
+@url = http://127.0.0.1:8074/api/v1/expense/type
+
+
+###
+GET {{url}}
+
+
+###
+POST {{url}}/add
+Content-Type: application/json
+
+{
+    "type": "account2"
+}
+
+###
+GET {{url}}/1
+
+###
+DELETE {{url}}/9
+
+###
+PUT {{url}}/9
+Content-Type: application/json
+
+{
+    "type": "ac33"
+}

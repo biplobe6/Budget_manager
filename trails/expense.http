@@ -1,0 +1,37 @@
+@url = http://127.0.0.1:8074/api/v1/expense
+
+###
+# all entry
+GET {{url}}?full
+
+###
+# current month
+GET {{url}}
+
+###
+# month 9 of current year
+GET {{url}}?m=9
+
+###
+# day 7 of current month
+GET {{url}}?d=7
+
+###
+# specific date lookup // 2018-09-22
+GET {{url}}?y=2018&m=9&d=22
+
+###
+POST {{url}}/add
+Content-Type: application/json
+
+{
+    "type": 1,
+    "date": "2018-10-13",
+    "amount": 3000
+}
+
+###
+GET {{url}}/1
+
+###
+DELETE {{url}}/27
