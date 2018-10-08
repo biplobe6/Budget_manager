@@ -35,3 +35,12 @@ GET {{url}}/1
 
 ###
 DELETE {{url}}/27
+
+###
+PUT {{url}}/8
+Content-Type: application/json
+
+{
+    "type": 1,
+    "amount": 4000
+}
