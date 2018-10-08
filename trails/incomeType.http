@@ -1,14 +1,12 @@
-@host = http://127.0.0.1:8074
-@api = api/v1
-
-
-
-###
-GET {{host}}/{{api}}/income_type
+@url = http://127.0.0.1:8074/api/v1/income/type
 
 
 ###
-POST {{host}}/{{api}}/income_type/add
+GET {{url}}
+
+
+###
+POST {{url}}/add
 Content-Type: application/json
 
 {
@@ -16,13 +14,13 @@ Content-Type: application/json
 }
 
 ###
-GET {{host}}/{{api}}/income_type/1
+GET {{url}}/1
 
 ###
-DELETE {{host}}/{{api}}/income_type/9
+DELETE {{url}}/9
 
 ###
-PUT {{host}}/{{api}}/income_type/9
+PUT {{url}}/9
 Content-Type: application/json
 
 {
