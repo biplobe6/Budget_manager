@@ -3,5 +3,5 @@ cd src
 
 (
 	..\env\Scripts\activate
-	..\env\Scripts\python manage.py runserver 0:8081
+	..\env\Scripts\python manage.py runserver 0:8074
 )
