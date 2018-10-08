@@ -9,7 +9,7 @@ class IncomeType(models.Model):
 
 
 class Income(models.Model):
-    type = models.ForeignKey(IncomeType)
+    type = models.ForeignKey(IncomeType, on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=True, blank=True)
     amount = models.FloatField()
 
