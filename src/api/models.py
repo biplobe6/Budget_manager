@@ -77,3 +77,14 @@ class Balance:
             "amount": self.get()
         })
 
+
+class Budget(models.Model):
+    type = models.ForeignKey(ExpenseType, on_delete=models.CASCADE)
+    month_id = models.IntegerField()
+    amount = models.FloatField(default=0)
+
+    def __str__(self):
+        return str("type: {}, month id: {}, amount: {}".format(self.type, self.month_id, self.amount))
+
+    class Meta:
+        unique_together = ("type", "month_id")

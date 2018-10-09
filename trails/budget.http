@@ -1,0 +1,25 @@
+@url = http://127.0.0.1:8074/api/v1/budget
+
+
+###
+GET {{url}}
+
+
+###
+GET {{url}}/calc
+
+
+###
+GET {{url}}/1
+
+
+###
+DELETE {{url}}/5
+
+###
+PATCH {{url}}/6
+Content-Type: application/json
+
+{
+    "amount": 4000
+}
