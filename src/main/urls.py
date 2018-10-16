@@ -24,7 +24,7 @@ urlpatterns = []
 
 if settings.LOCAL_PRODUCTION and not settings.DEBUG:
     urlpatterns += [
-        url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT})
+        url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATICFILES_DIRS[0]})
     ]
 
 urlpatterns += [
