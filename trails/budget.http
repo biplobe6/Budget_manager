@@ -4,6 +4,8 @@
 ###
 GET {{url}}
 
+###
+GET {{url}}?y=2018&m=10
 
 ###
 GET {{url}}/calc
