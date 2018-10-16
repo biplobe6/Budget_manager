@@ -60,6 +60,8 @@ class Balance:
     def calculate_amount(self):
         income = self.income_model.objects.aggregate(income=models.Sum("amount"))["income"]
         expense = self.expense_model.objects.aggregate(expense=models.Sum("amount"))["expense"]
+        income = 0 if income is None else income
+        expense = 0 if expense is None else expense
         self.object.amount = income - expense
         self.object.save()
 
