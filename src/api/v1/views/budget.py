@@ -19,9 +19,10 @@ def extract_date(request):
     today = date.today()
     year = int(request.GET.get("y", today.year))
     month = int(request.GET.get("m", today.month))
+    month = str(month if month < today.month else today.month).zfill(2)
     return year, month, int("{}{}".format(
         year if year < today.year else today.year,
-        month if month < today.month else today.month
+        month
     ))
 
 
