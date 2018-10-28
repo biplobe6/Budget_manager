@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.utils import OperationalError
 from django.http import JsonResponse
 from datetime import date
 
@@ -44,10 +45,13 @@ class BalanceDB(models.Model):
 
 class Balance:
     def __init__(self):
-        self.model = BalanceDB
-        self.expense_model = Expense
-        self.income_model = Income
-        self.object = self.get_object()
+        try:
+            self.model = BalanceDB
+            self.expense_model = Expense
+            self.income_model = Income
+            self.object = self.get_object()
+        except OperationalError:
+            pass
 
     def get_object(self):
         try:
