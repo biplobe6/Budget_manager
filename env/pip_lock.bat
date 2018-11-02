@@ -3,6 +3,6 @@
 (
     Scripts\activate
     pip freeze
-    pip freeze > requirments.txt
+    pip freeze > requirements.txt
     deactivate
 )

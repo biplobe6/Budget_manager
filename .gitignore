@@ -7,7 +7,7 @@ node_modules/*
 env/*
 !env/pip_lock.bat
 !env/install.bat
-!env/requirments.txt
+!env/requirements.txt
 src/installed
 **/*.sqlite3
 *-journal

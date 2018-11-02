@@ -5,6 +5,6 @@
     echo "Please configure firewall (if required)"
     pause
     Scripts\activate
-    python.exe -m pip install pip --upgrade
-    pip install -r requirments.txt
+    python.exe -m pip install --upgrade pip
+    pip install -r requirements.txt
 )
