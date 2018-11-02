@@ -1,3 +1,20 @@
+# Budget Manager
+
+## Dashboard
+![Dashboard](/docs/dashboard.png?raw=true "Dashboard")
+
+## Form
+![Form](/docs/form.png?raw=true "Form")
+
+## Income
+![Income](/docs/income.png?raw=true "Income")
+
+## Expense
+![Expense](/docs/expense.png?raw=true "Expense")
+
+## Setting
+![Setting](/docs/setting.png?raw=true "Setting")
+
 # Requirements
 * Python 3 is required.
 
